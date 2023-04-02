@@ -1,0 +1,11 @@
+<div class="card m-2">
+    <img class="card-img-top" [src]="pokemonImages" alt="image:{{pokemon.name}}">
+    <div class="card-body ">
+        <div class="d-flex flex-column align-items-center">
+            <h5 class="card-title">{{pokemon.name | uppercase}}</h5>
+            <a class="btn " routerLink="/detail/{{pokemon.name}}">
+                Ver Características
+            </a>
+        </div>
+    </div>
+</div>

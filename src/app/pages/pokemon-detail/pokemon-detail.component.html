@@ -1,0 +1,38 @@
+<div class="container-detail ">
+    <h1>Tarjeta Pokemon</h1>
+    <div class="detail row">
+        <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+             <img class="card-img" [src]="dataPokemon?.sprites?.front_default" alt="image:{{name}}"> 
+        </div>
+        <div class="col-12  col-lg-6">
+            <div class="row">
+                <div class="d-flex justify-content-center">
+                    <h1>{{name | uppercase}}</h1>
+                </div>
+                <div class="col">
+                    <h4>Estadística: </h4>
+                    <div *ngFor="let stat of dataPokemon?.stats">
+                        <strong>{{stat.stat.name}}:</strong> {{stat.base_stat}}
+                    </div>
+                </div>
+                <div class="col">
+                    <h4>Habilidades:</h4>
+                    <p *ngFor="let abilities of dataPokemon?.abilities">{{abilities.ability.name}}</p>
+                </div>
+                <div class="col">
+                    <div>
+                        <h4>Experiencia:</h4> {{dataPokemon?.base_experience}}
+                    </div>
+                    <div>
+                        <h4>Altura:</h4> {{dataPokemon?.height}}
+                    </div>
+                </div>
+
+                <div class="col">
+                    <h4>Tipo:</h4>
+                    <p *ngFor="let type of dataPokemon?.types">{{type.type.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

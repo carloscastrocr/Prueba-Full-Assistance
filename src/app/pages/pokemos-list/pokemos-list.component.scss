@@ -1,0 +1,12 @@
+.pagination-list span {
+    color: black;
+    font-weight: bold;
+}
+
+@media (max-width: 800px) {
+    .pagination-list {
+        position: fixed;
+        top: 110px;
+    }
+
+}

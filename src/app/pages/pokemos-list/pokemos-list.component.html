@@ -1,0 +1,32 @@
+<div class="row mt-4">
+    <div class="d-flex justify-content-center">
+        <h2 class="alinen">Lista de Pokemons</h2>
+    </div>
+    <div *ngFor="let pokemon of listPokemon" class="col d-flex justify-content-center">
+     <app-pokemon [pokemon]="pokemon" ></app-pokemon>
+    </div>
+
+    <div class="pagination-list d-flex justify-content-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item" >
+                    <button class="page-link">
+                       <span> {{currentPage}} de {{this.totalPost.length}}</span>      
+                    </button>
+                </li>
+                <li class="page-item">
+                    <button class="page-link" (click)="handlePrevbtn()" aria-label="Previous"
+                        [disabled]="currentPage <= 1 ? true:false">
+                        <span aria-hidden="true">&laquo;</span>
+                    </button>
+                </li>
+                <li class="page-item">
+                    <button class="page-link" (click)="handleNextbtn()" aria-label="Next"
+                        [disabled]="currentPage == totalPost[totalPost.length - 1] ? true : false">
+                        <span aria-hidden="true">&raquo;</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
